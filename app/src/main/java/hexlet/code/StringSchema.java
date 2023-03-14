@@ -5,7 +5,7 @@ public class StringSchema extends Schema {
         return this;
     }
 
-    public StringSchema minLength() {
+    public StringSchema minLength(int length) {
         return this;
     }
 
