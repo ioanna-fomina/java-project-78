@@ -8,10 +8,10 @@ public abstract class Schema {
     private List<Predicate<Object>> predicates = new ArrayList<>();
 
     protected void addPredicate(Predicate<Object> predicate) {
-
+        predicates.add(predicate);
     }
 
     public boolean isValid(Object object) {
-        return true;
+        return predicates.stream().allMatch(predicate -> predicate.test(object));
     }
 }
